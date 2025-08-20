@@ -10,103 +10,96 @@
         rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(120deg, #fffbe7 0%, #ffe5b4 100%);
+            background: repeating-linear-gradient(135deg, #fffde7 0 40px, #ffe0b2 40px 80px, #fffde7 80px 120px);
             font-family: 'Noto Serif', serif;
-            color: #a0522d;
+            color: #263238;
             margin: 0;
             padding: 0;
             min-height: 100vh;
         }
 
-        .invitation-container {
-            max-width: 500px;
-            margin: 40px auto;
-            background: #fffdf6e6;
-            border-radius: 24px;
-            box-shadow: 0 8px 32px rgba(255, 183, 77, 0.18), 0 2px 8px rgba(160, 82, 45, 0.08);
-            border: 4px double #ffb300;
-            padding: 40px 32px 32px 32px;
-            text-align: center;
-            position: relative;
+        .invitation-flex {
+            display: flex;
+            flex-direction: row;
+            max-width: 900px;
+            margin: 48px auto;
+            background: #fff3e0;
+            border-radius: 32px;
+            box-shadow: 0 8px 32px rgba(255, 183, 77, 0.13), 0 2px 8px rgba(62, 39, 35, 0.08);
             overflow: hidden;
+            border: 6px solid #ff7043;
         }
 
-        /* Decorative Borders using CSS */
-        .decor-top,
-        .decor-bottom {
-            width: 100%;
-            font-size: 2.2em;
-            color: #ff9800;
-            letter-spacing: 0.2em;
-            margin-bottom: 10px;
-            margin-top: 10px;
-            user-select: none;
+        .side-panel {
+            background: linear-gradient(135deg, #ff7043 0%, #ffb74d 100%);
+            color: #fff;
+            width: 36%;
+            min-width: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 12px;
+            position: relative;
         }
 
-        .decor-bottom {
+        .side-panel .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 2.1em;
+            font-family: 'Great Vibes', cursive;
+            letter-spacing: 0.1em;
+            margin-bottom: 18px;
             margin-top: 18px;
-            margin-bottom: 0;
         }
 
-        .mandala-emoji {
-            font-size: 3.2em;
-            margin-bottom: 10px;
-            margin-top: -18px;
-            display: inline-block;
-            animation: rotateMandala 18s linear infinite;
-            filter: drop-shadow(0 2px 8px #ffe5b4);
+        .side-panel .emoji-stack {
+            font-size: 2.5em;
+            margin: 18px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
         }
 
-        @keyframes rotateMandala {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
+        .side-panel .sanskrit {
+            font-size: 1.2em;
+            font-family: 'Noto Serif', serif;
+            letter-spacing: 2px;
+            margin-top: 18px;
         }
 
-        .flower-emoji {
-            font-size: 2em;
-            position: absolute;
-            top: 18px;
-            opacity: 0.85;
-            z-index: 1;
-            user-select: none;
-        }
-
-        .flower-emoji.left {
-            left: 18px;
-            transform: rotate(-18deg);
-        }
-
-        .flower-emoji.right {
-            right: 18px;
-            transform: scaleX(-1) rotate(-18deg);
+        .main-panel {
+            flex: 1;
+            padding: 38px 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fffde7;
+            position: relative;
         }
 
         h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.8em;
-            color: #d2691e;
-            margin-bottom: 0.1em;
+            font-size: 2.7em;
+            color: #ff7043;
+            margin: 0.2em 0 0.1em 0;
             letter-spacing: 2px;
-            text-shadow: 0 2px 8px #ffe5b4;
+            text-shadow: 0 2px 8px #ffe0b2;
         }
 
         .names {
             font-family: 'Great Vibes', cursive;
-            font-size: 2.2em;
-            color: #b22222;
+            font-size: 2em;
+            color: #d84315;
             font-weight: bold;
             margin: 0.5em 0 0.1em 0;
             letter-spacing: 1px;
         }
 
         .and {
-            font-size: 1.3em;
-            color: #a0522d;
+            font-size: 1.2em;
+            color: #ff7043;
             margin: 0.2em 0;
             font-family: 'Noto Serif', serif;
             font-style: italic;
@@ -116,111 +109,137 @@
             width: 60px;
             margin: 18px auto 18px auto;
             border: 0;
-            border-top: 2px dashed #ffb300;
+            border-top: 2px dashed #ff7043;
         }
 
         .details {
             font-size: 1.13em;
             margin: 1.5em 0 1em 0;
-            color: #7c4700;
-            background: rgba(255, 243, 205, 0.7);
-            border-radius: 12px;
+            color: #6d4c41;
+            background: rgba(255, 224, 178, 0.7);
+            border-radius: 14px;
             padding: 18px 10px 12px 10px;
-            box-shadow: 0 2px 8px #ffe5b4;
+            box-shadow: 0 2px 8px #ffe0b2;
+            text-align: center;
         }
 
         .details strong {
-            color: #b22222;
+            color: #d84315;
         }
 
         .footer {
             margin-top: 2em;
             font-size: 1.08em;
-            color: #a0522d;
+            color: #ff7043;
             font-family: 'Noto Serif', serif;
-            background: rgba(255, 243, 205, 0.5);
+            background: rgba(255, 224, 178, 0.5);
             border-radius: 10px;
             padding: 10px 8px 6px 8px;
+            text-align: center;
         }
 
         /* Responsive Design */
-        @media (max-width: 650px) {
-            .invitation-container {
-                padding: 16px 2vw 14px 2vw;
+        @media (max-width: 900px) {
+            .invitation-flex {
+                flex-direction: column;
                 max-width: 98vw;
-                margin: 10px;
+                margin: 3px;
+                border: 3px solid #ff7043;
             }
 
-            .mandala-emoji {
-                font-size: 2em;
-                margin-top: -8px;
+            .side-panel {
+                flex-direction: row;
+                width: 100%;
+                min-width: unset;
+                padding: 18px 0 8px 0;
+                justify-content: flex-start;
             }
 
-            .flower-emoji {
-                font-size: 1.3em;
-                top: 8px;
+            .side-panel .vertical-text {
+                writing-mode: horizontal-tb;
+                font-size: 1.5em;
+                margin: 0 18px 0 0;
             }
 
-            h1 {
-                font-size: 2em;
+            .side-panel .emoji-stack {
+                flex-direction: row;
+                font-size: 1.5em;
+                margin: 0 18px 0 0;
             }
 
-            .names {
-                font-size: 1.4em;
-            }
-
-            .details {
+            .side-panel .sanskrit {
+                margin: 0;
                 font-size: 1em;
-                padding: 10px 2px 8px 2px;
             }
 
-            .decor-top,
-            .decor-bottom {
-                font-size: 1.2em;
+            .main-panel {
+                padding: 22px 4vw 18px 4vw;
             }
         }
 
-        @media (max-width: 400px) {
-            .invitation-container {
-                padding: 6px 0 6px 0;
+        @media (max-width: 500px) {
+            .main-panel {
+                padding: 10px 2vw 10px 2vw;
+
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            .names {
+                font-size: 1.5em;
+            }
+
+            .details {
+                font-size: 0.95em;
+                padding: 8px 2px 8px 2px;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="invitation-container">
-        <div class="decor-top">✦ॐ✦✦✦✦✦✦✦</div>
-        <span class="flower-emoji left">🌸</span>
-        <span class="mandala-emoji" title="Mandala">🪔</span>
-        <span class="flower-emoji right">🌸</span>
-        <h1>Wedding Invitation</h1>
-        <div class="names">
-            Chaitra
+    <div class="invitation-flex">
+        <div class="side-panel">
+            <div class="vertical-text">Wedding</div>
+            <div class="emoji-stack">
+                <span>🌸</span>
+                <span>🪔</span>
+                <span>🌺</span>
+                <span>🪔</span>
+                <span>🌸</span>
+            </div>
+            <div class="sanskrit">|| शुभ विवाह ||</div>
         </div>
-        <div class="and">
-            <span>and</span>
+        <div class="main-panel">
+            <h1>Invitation</h1>
+            <div class="names">
+                Chaitra
+            </div>
+            <div class="and">
+                <span>and</span>
+            </div>
+            <div class="names">
+                Damodar
+            </div>
+            <hr class="divider">
+            <div class="details">
+                <p>With the blessings of their families,<br>
+                    Chaitra &amp; Damodar request the honor of your presence<br>
+                    at their wedding ceremony.</p>
+                <p>
+                    <strong>Date:</strong> 7th November, 2025<br>
+                    <strong>Time:</strong> 12:00 PM onwards<br>
+                    <strong>Venue:</strong> Shree Mangesh Temple, Mardol Goa
+                </p>
+            </div>
+            <div class="footer">
+                <em>"Let love and tradition unite us in celebration."</em>
+                <br>
+                <span>We look forward to celebrating with you!</span>
+            </div>
         </div>
-        <div class="names">
-            Damodar
-        </div>
-        <hr class="divider">
-        <div class="details">
-            <p>With the blessings of their families,<br>
-                Chaitra &amp; Damodar request the honor of your presence<br>
-                at their wedding ceremony.</p>
-            <p>
-                <strong>Date:</strong> 7th November, 2025<br>
-                <strong>Time:</strong> 12:00 PM onwards<br>
-                <strong>Venue:</strong> Shree Mangesh Temple, Mardol Goa
-            </p>
-        </div>
-        <div class="footer">
-            <em>"Let love and tradition unite us in celebration."</em>
-            <br>
-            <span>We look forward to celebrating with you!</span>
-        </div>
-        <div class="decor-bottom">✦✦✦✦शुभ विवाह✦✦✦✦</div>
     </div>
 </body>
 
