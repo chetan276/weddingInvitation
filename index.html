@@ -5,86 +5,184 @@
     <meta charset="UTF-8">
     <title>Wedding Invitation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts for a more elegant look -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif:wght@700&display=swap"
+        rel="stylesheet">
     <style>
         body {
-            background: linear-gradient(135deg, #fffbe7 0%, #ffe5b4 100%);
-            font-family: 'Segoe UI', 'Noto Serif', serif;
+            background: linear-gradient(120deg, #fffbe7 0%, #ffe5b4 100%);
+            font-family: 'Noto Serif', serif;
             color: #a0522d;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
         }
 
         .invitation-container {
-            max-width: 600px;
+            max-width: 500px;
             margin: 40px auto;
-            background: #fff8e1;
-            border-radius: 18px;
-            box-shadow: 0 4px 24px rgba(255, 183, 77, 0.15);
-            border: 3px solid #ffb300;
-            padding: 32px 24px;
+            background: #fffdf6e6;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(255, 183, 77, 0.18), 0 2px 8px rgba(160, 82, 45, 0.08);
+            border: 4px double #ffb300;
+            padding: 40px 32px 32px 32px;
             text-align: center;
             position: relative;
+            overflow: hidden;
         }
 
-        .mandala {
-            width: 80px;
-            margin-bottom: 16px;
+        /* Decorative Borders using CSS */
+        .decor-top,
+        .decor-bottom {
+            width: 100%;
+            font-size: 2.2em;
+            color: #ff9800;
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            user-select: none;
+        }
+
+        .decor-bottom {
+            margin-top: 18px;
+            margin-bottom: 0;
+        }
+
+        .mandala-emoji {
+            font-size: 3.2em;
+            margin-bottom: 10px;
+            margin-top: -18px;
+            display: inline-block;
+            animation: rotateMandala 18s linear infinite;
+            filter: drop-shadow(0 2px 8px #ffe5b4);
+        }
+
+        @keyframes rotateMandala {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .flower-emoji {
+            font-size: 2em;
+            position: absolute;
+            top: 18px;
+            opacity: 0.85;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .flower-emoji.left {
+            left: 18px;
+            transform: rotate(-18deg);
+        }
+
+        .flower-emoji.right {
+            right: 18px;
+            transform: scaleX(-1) rotate(-18deg);
         }
 
         h1 {
-            font-family: 'Noto Serif', serif;
-            font-size: 2.5em;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8em;
             color: #d2691e;
-            margin-bottom: 0.2em;
+            margin-bottom: 0.1em;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px #ffe5b4;
         }
 
         .names {
-            font-size: 2em;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.2em;
             color: #b22222;
             font-weight: bold;
-            margin: 0.5em 0;
+            margin: 0.5em 0 0.1em 0;
+            letter-spacing: 1px;
         }
 
         .and {
-            font-size: 1.2em;
+            font-size: 1.3em;
             color: #a0522d;
             margin: 0.2em 0;
+            font-family: 'Noto Serif', serif;
+            font-style: italic;
+        }
+
+        .divider {
+            width: 60px;
+            margin: 18px auto 18px auto;
+            border: 0;
+            border-top: 2px dashed #ffb300;
         }
 
         .details {
-            font-size: 1.1em;
-            margin: 1.5em 0;
+            font-size: 1.13em;
+            margin: 1.5em 0 1em 0;
             color: #7c4700;
+            background: rgba(255, 243, 205, 0.7);
+            border-radius: 12px;
+            padding: 18px 10px 12px 10px;
+            box-shadow: 0 2px 8px #ffe5b4;
+        }
+
+        .details strong {
+            color: #b22222;
         }
 
         .footer {
             margin-top: 2em;
-            font-size: 1em;
+            font-size: 1.08em;
             color: #a0522d;
+            font-family: 'Noto Serif', serif;
+            background: rgba(255, 243, 205, 0.5);
+            border-radius: 10px;
+            padding: 10px 8px 6px 8px;
         }
 
-        .flower {
-            position: absolute;
-            width: 40px;
-            top: 16px;
-        }
-
-        .flower.left {
-            left: 16px;
-        }
-
-        .flower.right {
-            right: 16px;
-            transform: scaleX(-1);
-        }
-
+        /* Responsive Design */
         @media (max-width: 650px) {
             .invitation-container {
-                padding: 16px 4px;
+                padding: 16px 2vw 14px 2vw;
+                max-width: 98vw;
+                margin: 10px;
             }
 
-            .mandala {
-                width: 60px;
+            .mandala-emoji {
+                font-size: 2em;
+                margin-top: -8px;
+            }
+
+            .flower-emoji {
+                font-size: 1.3em;
+                top: 8px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .names {
+                font-size: 1.4em;
+            }
+
+            .details {
+                font-size: 1em;
+                padding: 10px 2px 8px 2px;
+            }
+
+            .decor-top,
+            .decor-bottom {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .invitation-container {
+                padding: 6px 0 6px 0;
             }
         }
     </style>
@@ -92,12 +190,10 @@
 
 <body>
     <div class="invitation-container">
-        <!-- Decorative Mandala SVG -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Mandala.svg" alt="Mandala" class="mandala">
-        <img src="https://cdn.pixabay.com/photo/2013/07/13/12/46/flower-146601_1280.png" class="flower left"
-            alt="Flower">
-        <img src="https://cdn.pixabay.com/photo/20  13/07/13/12/46/flower-146601_1280.png" class="flower right"
-            alt="Flower">
+        <div class="decor-top">✦ॐ✦✦✦✦✦✦✦</div>
+        <span class="flower-emoji left">🌸</span>
+        <span class="mandala-emoji" title="Mandala">🪔</span>
+        <span class="flower-emoji right">🌸</span>
         <h1>Wedding Invitation</h1>
         <div class="names">
             Chaitra
@@ -108,9 +204,10 @@
         <div class="names">
             Damodar
         </div>
+        <hr class="divider">
         <div class="details">
             <p>With the blessings of their families,<br>
-                Chaitra & Damodar request the honor of your presence<br>
+                Chaitra &amp; Damodar request the honor of your presence<br>
                 at their wedding ceremony.</p>
             <p>
                 <strong>Date:</strong> 7th November, 2025<br>
@@ -123,6 +220,7 @@
             <br>
             <span>We look forward to celebrating with you!</span>
         </div>
+        <div class="decor-bottom">✦✦✦✦शुभ विवाह✦✦✦✦</div>
     </div>
 </body>
 
