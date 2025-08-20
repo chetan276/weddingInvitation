@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wedding Invitation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background: linear-gradient(135deg, #fffbe7 0%, #ffe5b4 100%);
+            font-family: 'Segoe UI', 'Noto Serif', serif;
+            color: #a0522d;
+            margin: 0;
+            padding: 0;
+        }
+
+        .invitation-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff8e1;
+            border-radius: 18px;
+            box-shadow: 0 4px 24px rgba(255, 183, 77, 0.15);
+            border: 3px solid #ffb300;
+            padding: 32px 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .mandala {
+            width: 80px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: 'Noto Serif', serif;
+            font-size: 2.5em;
+            color: #d2691e;
+            margin-bottom: 0.2em;
+        }
+
+        .names {
+            font-size: 2em;
+            color: #b22222;
+            font-weight: bold;
+            margin: 0.5em 0;
+        }
+
+        .and {
+            font-size: 1.2em;
+            color: #a0522d;
+            margin: 0.2em 0;
+        }
+
+        .details {
+            font-size: 1.1em;
+            margin: 1.5em 0;
+            color: #7c4700;
+        }
+
+        .footer {
+            margin-top: 2em;
+            font-size: 1em;
+            color: #a0522d;
+        }
+
+        .flower {
+            position: absolute;
+            width: 40px;
+            top: 16px;
+        }
+
+        .flower.left {
+            left: 16px;
+        }
+
+        .flower.right {
+            right: 16px;
+            transform: scaleX(-1);
+        }
+
+        @media (max-width: 650px) {
+            .invitation-container {
+                padding: 16px 4px;
+            }
+
+            .mandala {
+                width: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="invitation-container">
+        <!-- Decorative Mandala SVG -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Mandala.svg" alt="Mandala" class="mandala">
+        <img src="https://cdn.pixabay.com/photo/2013/07/13/12/46/flower-146601_1280.png" class="flower left"
+            alt="Flower">
+        <img src="https://cdn.pixabay.com/photo/20  13/07/13/12/46/flower-146601_1280.png" class="flower right"
+            alt="Flower">
+        <h1>Wedding Invitation</h1>
+        <div class="names">
+            Priya Sharma
+        </div>
+        <div class="and">
+            <span>and</span>
+        </div>
+        <div class="names">
+            Rahul Verma
+        </div>
+        <div class="details">
+            <p>With the blessings of their families,<br>
+                Priya & Rahul request the honor of your presence<br>
+                at their wedding ceremony.</p>
+            <p>
+                <strong>Date:</strong> 15th December 2025<br>
+                <strong>Time:</strong> 7:00 PM onwards<br>
+                <strong>Venue:</strong> Shree Banquet Hall, MG Road, Mumbai
+            </p>
+        </div>
+        <div class="footer">
+            <em>"Let love and tradition unite us in celebration."</em>
+            <br>
+            <span>We look forward to celebrating with you!</span>
+        </div>
+    </div>
+</body>
+
+</html>
