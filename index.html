@@ -1,246 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Wedding Invitation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Fonts for a more elegant look -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Serif:wght@700&display=swap"
-        rel="stylesheet">
+    <title>Chaitra & Damodar Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        :root {
+            --primary-gold: #FFD700; /* Gold */
+            --secondary-maroon: #8B0000; /* Darker Maroon */
+            --accent-pink: #FF69B4; /* Hot Pink */
+            --text-dark: #333333;
+            --text-light: #fdfdfd;
+            --bg-light: #fdfdfd;
+            --bg-dark: #2c3e50;
+            --border-color: #FFD700;
+            --bright-yellow-bg: #FFFACD; /* Lemon Chiffon for brighter hero */
+        }
+
         body {
-            background: repeating-linear-gradient(135deg, #fffde7 0 40px, #ffe0b2 40px 80px, #fffde7 80px 120px);
-            font-family: 'Noto Serif', serif;
-            color: #263238;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        .invitation-flex {
-            display: flex;
-            flex-direction: row;
-            max-width: 900px;
-            margin: 48px auto;
-            background: #fff3e0;
-            border-radius: 32px;
-            box-shadow: 0 8px 32px rgba(255, 183, 77, 0.13), 0 2px 8px rgba(62, 39, 35, 0.08);
+        /* --- Global Styles --- */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--secondary-maroon);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 { font-size: 3.5em; color: var(--primary-gold); text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
+        h2 { font-size: 2.8em; }
+        h3 { font-size: 2em; color: var(--accent-pink); }
+
+        p {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .section {
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
             overflow: hidden;
-            border: 6px solid #ff7043;
         }
 
-        .side-panel {
-            background: linear-gradient(135deg, #ff7043 0%, #ffb74d 100%);
-            color: #fff;
-            width: 36%;
-            min-width: 180px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 32px 12px;
-            position: relative;
-        }
-
-        .side-panel .vertical-text {
-            writing-mode: vertical-rl;
-            text-orientation: mixed;
-            font-size: 2.1em;
-            font-family: 'Great Vibes', cursive;
-            letter-spacing: 0.1em;
-            margin-bottom: 18px;
-            margin-top: 18px;
-        }
-
-        .side-panel .emoji-stack {
-            font-size: 2.5em;
-            margin: 18px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5em;
-        }
-
-        .side-panel .sanskrit {
-            font-size: 1.2em;
-            font-family: 'Noto Serif', serif;
-            letter-spacing: 2px;
-            margin-top: 18px;
-        }
-
-        .main-panel {
-            flex: 1;
-            padding: 38px 32px 32px 32px;
+        /* --- Hero Section --- */
+        .hero {
+            background-color: var(--bright-yellow-bg); /* Brighter background */
+            color: var(--text-dark); /* Adjust text color for bright background */
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: #fffde7;
             position: relative;
+            overflow: hidden; /* Hide overflowing elements */
+            border-bottom: 5px solid var(--primary-gold);
         }
 
-        h1 {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2.7em;
-            color: #ff7043;
-            margin: 0.2em 0 0.1em 0;
-            letter-spacing: 2px;
-            text-shadow: 0 2px 8px #ffe0b2;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/gold-foil.png'); /* Subtle pattern */
+            opacity: 0.3;
+            z-index: 0;
         }
 
-        .names {
-            font-family: 'Great Vibes', cursive;
-            font-size: 2em;
-            color: #d84315;
-            font-weight: bold;
-            margin: 0.5em 0 0.1em 0;
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .ganpati-image {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+            margin-top: 5px;
+            border-radius: 15%;
+            border: 2px solid var(--primary-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            color: var(--secondary-maroon); /* Darker text for bright background */
+            font-size: 5em;
+            margin-bottom: 10px;
+            margin-top: 0;
+            text-shadow: 3px 3px 6px rgba(255,255,255,0.3); /* Lighter shadow */
+        }
+
+        .hero .tagline {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: var(--text-dark);
+            font-weight: 300;
+        }
+
+        .hero .couple-names {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4em;
+            color: var(--accent-pink);
+            margin: 20px 0;
+            line-height: 1.2;
+        }
+
+        .hero .date-location {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            color: var(--secondary-maroon); /* Darker text */
+            margin-top: 20px;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .and {
-            font-size: 1.2em;
-            color: #ff7043;
-            margin: 0.2em 0;
-            font-family: 'Noto Serif', serif;
+        /* --- Blessing Section --- */
+        .blessing-section {
+            background-color: var(--primary-gold);
+            color: var(--bg-dark);
+            padding: 40px 20px;
+            border-bottom: 3px solid var(--accent-pink);
+        }
+
+        .blessing-section .blessing-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.2em;
+            margin: -35px 0 15px 0;
+            color: var(--secondary-maroon);
+        }
+
+        .blessing-section .quote {
+            font-family: 'Montserrat', sans-serif;
             font-style: italic;
+            font-size: 1.1em;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-dark);
         }
 
-        .divider {
-            width: 60px;
-            margin: 18px auto 18px auto;
-            border: 0;
-            border-top: 2px dashed #ff7043;
+        /* --- Invitation Section --- */
+        .invitation-details {
+            background-color: var(--bg-light);
+            padding-bottom: 0;
         }
 
-        .details {
-            font-size: 1.13em;
-            margin: 1.5em 0 1em 0;
-            color: #6d4c41;
-            background: rgba(255, 224, 178, 0.7);
-            border-radius: 14px;
-            padding: 18px 10px 12px 10px;
-            box-shadow: 0 2px 8px #ffe0b2;
-            text-align: center;
+        .invitation-box {
+            background-color: #ffffff;
+            border: 3px solid var(--border-color);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
         }
 
-        .details strong {
-            color: #d84315;
+        .invitation-box h2 {
+            font-family: 'Dancing Script', cursive;
+            color: var(--secondary-maroon);
+            margin-bottom: 25px;
+            font-size: 3em;
         }
 
-        .footer {
-            margin-top: 2em;
-            font-size: 1.08em;
-            color: #ff7043;
-            font-family: 'Noto Serif', serif;
-            background: rgba(255, 224, 178, 0.5);
+        .invitation-box .parents {
+            font-size: 1.1em;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+        }
+
+        .invitation-box .event-item {
+            margin-bottom: 30px;
+        }
+
+        .invitation-box .event-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            color: var(--accent-pink);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .invitation-box .event-item p {
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        .invitation-box .event-item .time {
+            font-weight: 700;
+            color: var(--secondary-maroon);
+            font-size: 1.2em;
+        }
+
+        /* --- Love Story Section --- */
+        .love-story {
+            background-color: var(--accent-pink);
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+            padding-bottom: 80px;
+            border-top: 3px solid var(--primary-gold);
+        }
+
+        .love-story h2 {
+            color: var(--text-light);
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .love-story .story-paragraph {
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            font-size: 1.1em;
+            line-height: 1.8;
+            text-align: justify;
+            text-align-last: center;
+            color: var(--text-light);
+        }
+
+        .love-story .story-image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
             border-radius: 10px;
-            padding: 10px 8px 6px 8px;
-            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-top: 30px;
+            border: 3px solid var(--primary-gold);
         }
 
-        /* Responsive Design */
-        @media (max-width: 900px) {
-            .invitation-flex {
-                flex-direction: column;
-                max-width: 98vw;
-                margin: 3px;
-                border: 3px solid #ff7043;
+        /* --- Gallery Section --- */
+        .gallery {
+            background-color: var(--bg-light);
+            border-top: 3px solid var(--accent-pink);
+        }
+
+        .gallery h2 {
+            color: var(--secondary-maroon);
+            margin-bottom: 40px;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 2px solid var(--primary-gold);
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.03);
+            border-color: var(--accent-pink);
+        }
+
+        /* --- RSVP Section --- */
+        .rsvp {
+            background-color: var(--secondary-maroon);
+            color: var(--text-light);
+            padding: 60px 0 80px 0;
+            border-top: 3px solid var(--primary-gold);
+        }
+
+        .rsvp h2 {
+            color: var(--primary-gold);
+            margin-bottom: 30px;
+        }
+
+        .rsvp p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            color: var(--text-light);
+        }
+
+        .rsvp .button {
+            display: inline-block;
+            background-color: var(--primary-gold);
+            color: var(--secondary-maroon);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .rsvp .button:hover {
+            background-color: #ffd94f; /* Lighter gold */
+            transform: translateY(-3px);
+        }
+
+        /* --- Accommodation/Travel Section --- */
+        .accommodation {
+            background-color: var(--bg-light);
+            padding-bottom: 0;
+            border-top: 3px solid var(--accent-pink);
+        }
+
+        .accommodation .info-card {
+            background-color: #ffffff;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+
+        .accommodation .info-card h3 {
+            color: var(--secondary-maroon);
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4em;
+        }
+
+        .accommodation .info-card p {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .accommodation .info-card ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .accommodation .info-card li {
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+
+        /* --- Footer --- */
+        .footer {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            padding: 40px 20px;
+            font-size: 0.9em;
+            border-top: 5px solid var(--primary-gold);
+        }
+
+        .footer .social-links a {
+            color: var(--primary-gold);
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-links a:hover {
+            color: var(--accent-pink);
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8em; }
+            h2 { font-size: 2.2em; }
+            h3 { font-size: 1.6em; }
+
+            .hero {
+                height: 70vh;
+                padding: 20px;
+            }
+            .hero h1 { font-size: 3.5em; }
+            .hero .tagline { 
+                font-size: 1.2em; 
+                margin-top: 5px;
+                margin-bottom: 25px;
+            }
+            .hero .couple-names { font-size: 3em; }
+            .hero .date-location { font-size: 1.4em; }
+
+            .blessing-section .blessing-text {
+                font-size: 1.8em;
             }
 
-            .side-panel {
-                flex-direction: row;
-                width: 100%;
-                min-width: unset;
-                padding: 18px 0 8px 0;
-                justify-content: flex-start;
+            .invitation-box {
+                padding: 30px 20px;
+                margin: 0 10px;
             }
 
-            .side-panel .vertical-text {
-                writing-mode: horizontal-tb;
-                font-size: 1.5em;
-                margin: 0 18px 0 0;
+            .invitation-box h2 {
+                font-size: 2.5em;
             }
 
-            .side-panel .emoji-stack {
-                flex-direction: row;
-                font-size: 1.5em;
-                margin: 0 18px 0 0;
+            .love-story .story-paragraph {
+                text-align: center;
             }
 
-            .side-panel .sanskrit {
-                margin: 0;
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .rsvp .button {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 2.2em; }
+            h2 { font-size: 1.8em; }
+            h3 { font-size: 1.4em; }
+
+            .hero h1 { font-size: 2.8em; }
+            .hero .couple-names { font-size: 2.5em; }
+            .hero .date-location { font-size: 1.2em; }
+
+            .invitation-box h2 {
+                font-size: 2em;
+            }
+            .invitation-box .parents,
+            .invitation-box .event-item p {
                 font-size: 1em;
             }
 
-            .main-panel {
-                padding: 22px 4vw 18px 4vw;
+            .love-story .story-paragraph {
+                font-size: 1em;
             }
-        }
-
-        @media (max-width: 500px) {
-            .main-panel {
-                padding: 10px 2vw 10px 2vw;
-
-            }
-
-            h1 {
-                font-size: 1.9em;
-            }
-
-            .names {
-                font-size: 2em;
-            }
-
-            .details {
-                font-size: 0.95em;
-                padding: 8px 2px 8px 2px;
+            .ganpati-image {
+                margin-top: 35px;
+                width: 100px;
             }
         }
     </style>
 </head>
-
 <body>
-    <div class="invitation-flex">
-        <div class="side-panel">
-            <div class="vertical-text">Wedding</div>
-            <div class="emoji-stack">
-                <span>🌸</span>
-                <span>🪔</span>
-                <span>🌺</span>
-                <span>🪔</span>
-                <span>🌸</span>
-            </div>
-            <div class="sanskrit">|| शुभ विवाह ||</div>
-        </div>
-        <div class="main-panel">
-            <h1>Invitation</h1>
-            <div class="names">
-                Chaitra
-            </div>
-            <div class="and">
-                <span>and</span>
-            </div>
-            <div class="names">
-                Damodar
-            </div>
-            <hr class="divider">
-            <div class="details">
-                <p>With the blessings of their families,<br>
-                    Chaitra &amp; Damodar request the honor of your presence<br>
-                    at their wedding ceremony.</p>
-                <p>
-                    <strong>Date:</strong> 7th November, 2025<br>
-                    <strong>Time:</strong> 12:00 PM onwards<br>
-                    <strong>Venue:</strong> Shree Mangesh Temple, Mardol Goa
-                </p>
-            </div>
-            <div class="footer">
-                <em>"Let love and tradition unite us in celebration."</em>
-                <br>
-                <span>We look forward to celebrating with you!</span>
-            </div>
-        </div>
-    </div>
-</body>
 
+    <div class="hero">
+        <img src="Ganesha2.png" alt="Lord Ganesha" class="ganpati-image"> <!-- Placeholder for your Ganpati image -->
+        <p class="tagline">The Beginning of Our Forever</p>
+        <h1>With God's Grace</h1>
+        <p class="couple-names">Chaitra & Damodar</p>
+        <p class="date-location">November 07, 2025 | Shree Mangesh Temple, Mardol Goa</p>
+    </div>
+
+    
+
+    <section class="section invitation-details">
+        <div class="container">
+            <h2>You're Cordially Invited!</h2>
+            <div class="invitation-box">
+                <br class="parents">
+                <p>
+                    With love in their hearts and blessings from their families,</br>
+                    Chaitra and Damodar are getting married!</br>
+                    Join us as we celebrate their union</br>
+                    in a joyful ceremony rooted in tradition and togetherness.</br>
+                    We'd be honored to have you with us.
+                </p>
+
+                <!-- <p class="couple-names">Chaitra & Damodar</p>
+                <p>On</p> -->
+
+                <div class="event-item">
+                    <h3><i class="fas fa-ring"></i> Wedding Ceremony</h3>
+                    <p class="time">Friday, November 14, 2025</p>
+                    <p class="time">12:15 PM onwards (Auspicious Time)</p>
+                    <p>Shree Mangesh Temple, Mardol Goa</p>
+                </div>
+
+                <div class="event-item">
+                    <h3><i class="fas fa-champagne-glasses"></i> Reception</h3>
+                    <p class="time">Friday, November 14, 2025</p>
+                    <p class="time">01:00 PM onwards</p>
+                    <p>Shree Mangesh Temple, Mardol Goa</p>
+                </div>
+
+                <p style="margin-top: 30px;">Your presence is the most cherished gift.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section blessing-section">
+        <div class="container">
+            <p class="blessing-text">Om Gam Ganapataye Namaha</p>
+            <br class="quote">O Vighnaharta, Lambodara, Gajanana divine,</br>
+            Ekadanta, we offer prayers at Your shrine.</br>
+            Bless this sacred union with Your grace and might,</br>
+            And lead their path with wisdom and light.</p>
+        </div>
+    </section>
+
+    <!-- <section class="section love-story">
+        <div class="container">
+            <h2>Our Journey of Love</h2>
+            <p class="story-paragraph">
+                Chaitra and Damodar's paths first crossed at a cultural festival, a serendipitous meeting amidst vibrant colors and festive music. What started as a casual conversation quickly blossomed into a deep connection, fueled by shared laughter, mutual respect, and an undeniable spark. From quiet coffee dates to adventurous hikes, their love story unfolded beautifully, each moment weaving a stronger bond. They learned to lean on each other, to celebrate triumphs, and to navigate challenges as a team.
+            </p>
+            <p class="story-paragraph">
+                Damodar proposed to Chaitra under a canopy of stars, recreating their first date spot, a moment filled with tears of joy and heartfelt promises. Now, as they prepare to embark on their greatest adventure yet, they invite you to witness and bless their union, a testament to a love that truly feels divine.
+            </p>
+            <img src="https://via.placeholder.com/600x400/FF69B4/FFFFFF?text=Chaitra+and+Damodar" alt="Chaitra and Damodar" class="story-image">
+        </div>
+    </section> -->
+
+    <section class="section gallery">
+        <div class="container">
+            <h2>Cherished Moments</h2>
+            <div class="image-grid">
+                <img src="https://via.placeholder.com/300x200/FFD700/800000?text=Couple+Joy" alt="Couple Joy">
+                <img src="https://via.placeholder.com/300x200/800000/FFD700?text=Happy+Memories" alt="Happy Memories">
+                <img src="https://via.placeholder.com/300x200/FF69B4/FFFFFF?text=Engagement+Day" alt="Engagement Day">
+                <img src="https://via.placeholder.com/300x200/FFFFFF/FF69B4?text=Together+Forever" alt="Together Forever">
+                <img src="https://via.placeholder.com/300x200/FFD700/800000?text=Pre-Wedding+Shoot" alt="Pre-Wedding Shoot">
+                <img src="https://via.placeholder.com/300x200/800000/FFD700?text=Future+Dreams" alt="Future Dreams">
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="section accommodation">
+        <div class="container">
+            <h2>Accommodation & Travel</h2>
+            <div class="info-card">
+                <h3><i class="fas fa-hotel"></i> Recommended Hotels</h3>
+                <p>We've arranged special rates at the following hotels for our out-of-town guests:</p>
+                <ul>
+                    <li>**Hotel Grandeur:** <a href="#" style="color: var(--secondary-maroon);">Visit Website</a> (Use code "PRWEDDING" for discount)</li>
+                    <li>**City Comfort Inn:** <a href="#" style="color: var(--secondary-maroon);">Visit Website</a> (Mention Chaitra & Damodar's wedding)</li>
+                </ul>
+                <p>Please book by November 1st, 2024, to avail the special rates.</p>
+            </div>
+            <div class="info-card">
+                <h3><i class="fas fa-plane-departure"></i> Travel Information</h3>
+                <p>The wedding venue is easily accessible by:</p>
+                <ul>
+                    <li>**Nearest Airport:** [Airport Name] (Approx. 30 mins drive)</li>
+                    <li>**Nearest Train Station:** [Station Name] (Approx. 15 mins drive)</li>
+                </ul>
+                <p>We recommend using ride-sharing services or taxis for convenience. Detailed directions will be provided closer to the date.</p>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="section rsvp">
+        <div class="container">
+            <h2>RSVP</h2>
+            <p>Please let us know if you can join us in celebrating our special day.</p>
+            <p>Kindly RSVP by **November 02, 2025**</p>
+            <a href="mailto:ChaitraDamodar.wedding@email.com?subject=RSVP%20Chaitra%20%26%20Damodar%20Wedding" class="button"><i class="fas fa-paper-plane"></i> Confirm Your Presence</a>
+            <!-- <p style="margin-top: 30px; font-size: 0.9em;">For any queries, please contact: +1 (123) 456-7890</p> -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <!-- <p>&copy; 2025 Chaitra & Damodar. All Rights Reserved.</p> -->
+            <p>With best compliments from all relatives & friends.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>
